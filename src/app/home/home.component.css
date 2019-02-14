@@ -1,0 +1,133 @@
+.carousel {
+    width: 100%;
+    height: 470px;
+}
+.carousel img{
+   width: 280px;
+   height: 410px;
+   margin-left: 300px;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+.fixedbackground{
+   
+        position: relative;
+        width: 100%;
+      
+}
+.fixed-wrap {
+    clip: rect(0, auto, auto, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -999!important;
+  }
+  .fixed {
+    position: fixed;
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    will-change: transform;
+  }
+
+  .fixed {
+      background-image: url('../../assets/rrs.jpg');
+      z-index: -1;
+  }
+  .dark{
+    background-color: rgba(0, 0, 0, 0.90);
+    color: white;
+}
+.carousel-indicators{
+    left: 750px;
+}
+.carousel-indicators li {
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+  }
+.carousel-caption .movieData {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.85);
+    top: -110px;
+    height: 150px;
+    width: 600px;
+    margin-left: 200px;
+}
+.movieData p{
+    height: 90px;
+    overflow: hidden;
+}
+.movieData span{
+    font-size: 25px;
+    color: rgb(255, 136, 0);
+}
+.jumbotron {
+    height: 130px;
+    background-color: #353c44;
+    color: #cccccc;
+}
+
+.jumbotron i{
+    font-size: 60px;
+    text-align: center;
+    position: absolute;
+    left: 50px;
+    top: -30px;
+}
+.jumbotron .request{
+    margin-top: -30px;
+}
+.jumbotron p{
+    font-size: 15px;
+}
+.homeMoviesHeading h4{
+    color: orange;
+}
+.homeMoviesHeading  i {
+    margin-left: 8px;
+    margin-top: 10px;
+}
+.homeMovies .mmm{
+    height: 210px;
+    width: 130px;
+    margin-left: 10px;
+    margin-right: 10px;
+
+}
+.homeMovies img{
+    height: 195px;
+    width: 130px;
+    
+}
+.homeMovies img:hover{
+    transform: scale(1.1);
+
+}
+.homeMovies li {
+    display: inline-block;
+    overflow: hidden;
+    
+}
+h6{
+    color: rgb(255, 166, 0);
+    font-size: 16px;
+    width: 100px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+}
+.modal-lg{
+  width: 1400px;
+}

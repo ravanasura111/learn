@@ -1,0 +1,106 @@
+<div class="fixedbackground">
+  <div class="carousel dark" id="carousel">
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ul class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="6"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="7"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="8"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="9"></li>
+
+
+
+      </ul>
+      <div class="carousel-inner">
+            <div class="carousel-item active" *ngFor="let movie of movies; let i = index" [ngClass]="{'active' : i == 0}">
+    
+                <img class="d-block" [src]="movie.large_cover_image" alt="First slide">
+              <div class="carousel-caption">
+                   <div class="movieData">
+                    <h3>{{movie.title}}</h3>
+                    <p><span>Plot:</span> {{movie.summary}}</p>
+                   </div>
+              </div>
+              </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+</div>
+<div class="fixed-wrap">
+  <div class="fixed">
+  </div>
+</div>
+</div>
+<br>
+<br>
+<div class="container">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-2"><i class="fas fa-rss"></i></div>
+      <div class="col-md-10">
+        <div class="request">
+            <h5>Movie Buff - Watch Movies Online For Free
+              </h5>
+            <p>For some reasons, we have to change our domain from fmovies to Moviebuff. Please help us spread this. Thanks!
+          Ads can be a pain, but they are our only way to maintain the server. Your patience is highly appreciated and we hope our service can be worth it.</p></div>
+       
+        </div>
+        </div>
+   
+  </div>
+  </div>
+  <br>
+  <br>
+
+  <div class="container-fluid">
+      <div class="homeMoviesHeading">
+          <h4>Latest Movies<i class="fas fa-chevron-right"></i></h4>
+        </div>
+  </div>
+  <div class="homeMovies" id="homeMovies">
+      <div class="container-fluid">
+          <ul>
+            <li *ngFor="let movie of hmovies">
+              <div class="mmm">
+                 <a type="button" routerLink="/moviedetails/{{movie.id}}"> <img src="{{movie.medium_cover_image}}" alt=""></a>
+                  
+              </div>
+              <h6>{{movie.title}}</h6>
+            </li>
+          </ul>
+        </div>
+  </div>
+ 
+  <br>
+  <br>
+
+  <div class="container-fluid">
+    <div class="homeMoviesHeading">
+        <h4>Sci-Fi Movies<i class="fas fa-chevron-right"></i></h4>
+      </div>
+</div>
+<div class="homeMovies" id="homeMovies">
+  <div class="container-fluid">
+      <ul>
+        <li *ngFor="let movie of sciMovies">
+          <div class="mmm">
+             <a type="button" routerLink="/moviedetails/{{movie.id}}"> <img src="{{movie.medium_cover_image}}" alt=""></a>
+              
+          </div>
+          <h6>{{movie.title}}</h6>
+        </li>
+      </ul>
+    </div>
+</div>
