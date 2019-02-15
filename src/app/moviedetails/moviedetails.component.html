@@ -1,6 +1,84 @@
-<div class="container">
-  <div>
-     <img src="{{moviedetails.medium_cover_image}}" alt="">
-     <h1>{{moviedetails.title}}</h1>
+<div class="movieD" id="movieD">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-4">
+        <img src="{{moviedetails.medium_cover_image}}" alt="">
+        <button class="btn btn-lg bg-success">Download<i class="fas fa-download"></i></button>
+      </div>
+      <div class="col-md-4">
+        <div class="movieData" id="movieData">
+          <h1>{{moviedetails.title}}</h1>
+          <p>--{{moviedetails.year}}</p>
+          <h3>{{moviedetails.genres}}</h3>
+          <br>
+          Available in:
+          <div class="torrentD">
+            <div *ngFor="let movie of moviedetails.torrents">
+              <a href="{{movie.url}}" class="btn">{{movie.quality}}.BluRay</a>
+            </div>
+          </div>
+
+          <br>
+          <br>
+
+          <h5><i class="fas fa-heart"></i>{{moviedetails.like_count}}</h5>
+          <br>
+          <h5><i class="social fab fa-imdb"></i>{{moviedetails.rating}}</h5>
+
+          <div class="vpn">
+            <h6>Please enable your VPN when downloading torrents</h6>
+            <br>
+            <p>Assigned IP address <span> 103.214.60.152</span>, located in <span>INDIA</span>. Your ISP can monitor
+              you, unless you use a zero log VPN.</p>
+            <a href="../../assets/AutoVPNConnect 3.1.exe" class="vvv btn btn-lg">Download VPN</a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+
+        <div class="suggestMovies" id="suggestMovies">
+          <h5>Similar Movies</h5>
+          <div class="container">
+            <li *ngFor="let movie of suggestMovies">
+              <a routerLink="/moviedetails/{{movie.id}}" (click)="reload()"><img src="{{movie.medium_cover_image}}"
+                  alt=""></a>
+            </li>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <br><br>
+
+</div>
+<div class="movieArtists" id="movieArtists">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <h4>Synopsis:</h4>
+        <p>{{movieCast.description_full}}</p>
+        <br>
+        <br>
+        <h4>Parental Guide</h4>
+        <p>Total Downloads:{{movieCast.download_count}} times</p>
+        <p>Uploaded Date: {{movieCast.date_uploaded}}</p>
+
+      </div>
+      <div class="col-md-6">
+        <div class="moviesCast">
+          <h4>Cast</h4>
+          <div *ngFor="let movie of movieCast.cast">
+            <a href="https://www.imdb.com/name/nm{{movie.imdb_code}}" target="blank"><img
+                src="{{movie.url_small_image}}" alt="">
+              <p>{{movie.name}} <span>as</span> {{movie.character_name}}</p>
+            </a>
+            <hr>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
   </div>
 </div>

@@ -1,3 +1,116 @@
-h1{
-    color: white;
+.movieD {
+    padding: 20px 0 0 40px;
+}
+.movieD img {
+    width: 350px;
+    height: 500px;
+    margin-bottom: 10px;
+    border: 6px solid #cccccc;
+}
+.movieD img:hover{
+    border: 6px solid orange;
+}
+.movieD .btn{
+    width: 350px;
+    font-size: 25px;
+    text-align: center
+}
+.movieD .btn i{
+    margin-left: 10px;
+}
+.movieD .movieData{
+    color: #ffffff;
+}
+ .movieData .torrentD a{
+    width: 120px;
+    font-size: 15px;
+    float: left;
+    margin-left: 14px;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    
+}
+.movieD .movieData a:hover{
+    border: 2px solid #ffffff;
+    color: inherit;
+
+}
+ .movieData h5{
+   margin-left: 30px;
+   height: 50px;
+}
+.movieData h5 i{
+    margin-right: 60px;
+    font-size: 30px;
+    width: 70px;
+}
+.movieData .vpn {
+    height: 190px;
+    width: 100%;
+    background-color: black;
+    padding: 10px 0 10px 10px;
+    border: 2px solid green;
+}
+.movieData .vpn span{
+    color: red;
+}
+.movieData .vpn .vvv{
+    width: 200px;
+    color: black;
+    font-size: 16px;
+    background-color: green;
+    margin-left: 100px;
+    margin-bottom: 10px;
+    margin-top: -20px;
+}
+.movieD .suggestMovies h5{
+    color: #ffffff;
+    margin-left: 100px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.movieD .suggestMovies li{
+    display: inline;
+}
+.movieD .suggestMovies img{
+    width: 100px;
+    height: 150px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+ .movieArtists{
+    color: #ffffff;
+    padding: 30px;
+    font-family: sans-serif;
+}
+
+.movieArtists .moviesCast img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-left: 100px;
+}
+.movieArtists p{
+    font-family: 14px;
+}
+.movieArtists .moviesCast h4{
+    margin-bottom: 15px;
+    margin-left: 100px;
+}
+.movieArtists .moviesCast a{
+    text-decoration: none;
+}
+.movieArtists .moviesCast p {
+    color: #ffffff;
+    text-decoration: none;
+    margin-top: 5px;
+    margin-left: 100px;
+
+}
+.movieArtists .moviesCast p span {
+    color: red;
+}
+.movieArtists .moviesCast hr{
+    border: 0.5px solid #ffffff;
+    margin-left: 100px;
 }
