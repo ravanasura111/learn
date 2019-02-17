@@ -27,7 +27,7 @@ export class MoviedetailsComponent implements OnInit {
   }
   playerOptions: NgxY2PlayerOptions = {
     height: 300, // you can set 'auto', it will use container width to set size
-    width: 500,
+    width: 450,
     // when container resize, it will call resize function, you can custom this by set resizeDebounceTime, default is 200
     resizeDebounceTime: 0,
     // aspectRatio: (3 / 4), // you can set ratio of aspect ratio to auto resize with

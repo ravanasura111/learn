@@ -115,6 +115,54 @@
     margin-left: 100px;
 }
 .social {
-    width: 80%;
+    width: 70%;
     height: 300px;
+}
+.techspec{
+    color: white;
+    text-align: center;
+}
+.techDet{
+    color: white;
+    text-align: center;
+}
+
+.techDet li{
+    text-decoration: none;
+    display: inline;
+    margin-right: 110px;
+    margin-left: 90px;
+}
+.techDet li i{
+    margin-right: 4px;
+}
+.techtech{
+    color: white;
+    text-align: center;
+}
+.techtech a {
+    text-decoration: none;
+    color: white;
+    word-spacing: 5px;
+}
+.techtech a i{
+    margin-right: 4px;
+}
+.techDet hr{
+    border: 0.5px solid white;
+}
+.techtech hr{
+    border: 0.5px solid white;
+
+}
+.techspec hr{
+    border: 0.5px solid white;
+}
+.techtech i{
+    margin-right: 5px;
+}
+.allD{
+    background-color: black;
+    padding: 15px;
+    margin-left: 40px;
 }
