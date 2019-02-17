@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { BuffService } from '../buff.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { NgxY2PlayerComponent, NgxY2PlayerOptions } from 'ngx-y2-player';
+
 
 @Component({
   selector: 'app-moviedetails',
@@ -8,6 +10,8 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
   styleUrls: ['./moviedetails.component.css']
 })
 export class MoviedetailsComponent implements OnInit {
+  @ViewChild('video') video: NgxY2PlayerComponent;
+
   public selected: number;
   public moviedetails: any = [];
   public suggestMovies: [];
@@ -21,7 +25,13 @@ export class MoviedetailsComponent implements OnInit {
   movieCastSuccess(res) {
     this.movieCast = res.data.movie;
   }
-
+  playerOptions: NgxY2PlayerOptions = {
+    height: 300, // you can set 'auto', it will use container width to set size
+    width: 500,
+    // when container resize, it will call resize function, you can custom this by set resizeDebounceTime, default is 200
+    resizeDebounceTime: 0,
+    // aspectRatio: (3 / 4), // you can set ratio of aspect ratio to auto resize with
+  };
   constructor(private bservice: BuffService,
     private router: Router,
     private routes: ActivatedRoute,
@@ -50,6 +60,28 @@ export class MoviedetailsComponent implements OnInit {
       }
     );
 
+  }
+  pause() {
+    this.video.videoPlayer.pauseVideo();
+  }
+  play() {
+    this.video.videoPlayer.playVideo();
+  }
+  stop() {
+    this.video.videoPlayer.stopVideo();
+  }
+  go(second) {
+    this.video.videoPlayer.seekTo(second, true);
+  }
+ 
+  onReady(event) {
+    console.log('ready');
+    console.log(event);
+  }
+ 
+  onStateChange(event) {
+    console.log('change');
+    console.log(event);
   }
   reload() {
     window.location.reload();

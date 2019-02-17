@@ -4,6 +4,8 @@ import { AlertModule } from 'ngx-bootstrap';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgxY2PlayerModule } from 'ngx-y2-player';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -34,7 +36,7 @@ import { BuffService } from '../app/buff.service';
     AppRoutingModule,
     AlertModule.forRoot(),
     AngularFontAwesomeModule,
-    HttpClientModule,FormsModule
+    HttpClientModule,FormsModule,NgxY2PlayerModule
   ],
   providers: [BuffService],
   bootstrap: [AppComponent]

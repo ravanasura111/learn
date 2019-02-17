@@ -27,7 +27,6 @@
 
           <div class="vpn">
             <h6>Please enable your VPN when downloading torrents</h6>
-            <br>
             <p>Assigned IP address <span> 103.214.60.152</span>, located in <span>INDIA</span>. Your ISP can monitor
               you, unless you use a zero log VPN.</p>
             <a href="../../assets/AutoVPNConnect 3.1.exe" class="vvv btn btn-lg">Download VPN</a>
@@ -50,6 +49,18 @@
     </div>
   </div>
   <br><br>
+        <div style="width:80%; height:300px;" #container>
+          <ngx-y2-player
+            #video
+            [videoId]="movieCast.yt_trailer_code"
+            [playerOptions]="playerOptions"
+            [container]="container"
+            (ready)="onReady($event)"
+            (stateChange)="onStateChange($event)"
+            >
+          </ngx-y2-player>
+        </div>
+     
 
 </div>
 <div class="movieArtists" id="movieArtists">
