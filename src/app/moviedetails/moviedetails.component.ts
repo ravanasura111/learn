@@ -106,9 +106,9 @@ export class MoviedetailsComponent implements OnInit {
     console.log(event);
   }
   reload() {
-    if (event.originalEvent.persisted) {
+   
       window.location.reload(); 
-  }   
+    
   }
 
 }
