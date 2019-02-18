@@ -2,6 +2,12 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { BuffService } from '../buff.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { NgxY2PlayerComponent, NgxY2PlayerOptions } from 'ngx-y2-player';
+import { PlatformLocation } from '@angular/common' ;
+import { HostListener } from '@angular/core';
+
+
+
+
 
 
 @Component({
@@ -10,8 +16,15 @@ import { NgxY2PlayerComponent, NgxY2PlayerOptions } from 'ngx-y2-player';
   styleUrls: ['./moviedetails.component.css']
 })
 export class MoviedetailsComponent implements OnInit {
+  @HostListener('window:popstate', ['$event'])
+  onPopState(event) {
+    console.log('Back button pressed');
+    //Here you can handle your modal
+    window.location.reload();
+  }
   @ViewChild('video') video: NgxY2PlayerComponent;
-
+ 
+  public landingUrl: string = "/";
   public selected: number;
   public moviedetails: any = [];
   public suggestMovies: [];
@@ -34,9 +47,18 @@ export class MoviedetailsComponent implements OnInit {
   };
   constructor(private bservice: BuffService,
     private router: Router,
-    private routes: ActivatedRoute,
-  ) { }
+    private routes: ActivatedRoute, location: PlatformLocation
+    ) { 
+     
+    }
   ngOnInit() {
+    this.router.events.subscribe(() =>
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      })
+    );
     this.routes.paramMap.subscribe(
       params => {
         this.selected = +(params.get('id'));
@@ -84,7 +106,9 @@ export class MoviedetailsComponent implements OnInit {
     console.log(event);
   }
   reload() {
-    window.location.reload();
+    if (event.originalEvent.persisted) {
+      window.location.reload(); 
+  }   
   }
 
 }

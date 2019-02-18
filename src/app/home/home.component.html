@@ -74,7 +74,7 @@
           <ul>
             <li *ngFor="let movie of hmovies">
               <div class="mmm">
-                 <a type="button" routerLink="/moviedetails/{{movie.id}}"> <img src="{{movie.medium_cover_image}}" alt=""></a>
+                 <a type="button" routerLink="/moviedetails/{{movie.id}}" (click)="reload()"> <img src="{{movie.medium_cover_image}}" alt=""></a>
                   
               </div>
               <h6>{{movie.title}}</h6>
@@ -96,7 +96,7 @@
       <ul>
         <li *ngFor="let movie of sciMovies">
           <div class="mmm">
-             <a type="button" routerLink="/moviedetails/{{movie.id}}"> <img src="{{movie.medium_cover_image}}" alt=""></a>
+             <a type="button" routerLink="/moviedetails/{{movie.id}}" (click)="reload()"> <img src="{{movie.medium_cover_image}}" alt=""></a>
               
           </div>
           <h6>{{movie.title}}</h6>
