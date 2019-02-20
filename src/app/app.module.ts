@@ -5,6 +5,7 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgxY2PlayerModule } from 'ngx-y2-player';
+import {NgxPaginationModule} from 'ngx-pagination'
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,7 +37,7 @@ import { BuffService } from '../app/buff.service';
     AppRoutingModule,
     AlertModule.forRoot(),
     AngularFontAwesomeModule,
-    HttpClientModule,FormsModule,NgxY2PlayerModule
+    HttpClientModule,FormsModule,NgxY2PlayerModule,NgxPaginationModule
   ],
   providers: [BuffService],
   bootstrap: [AppComponent]

@@ -26,6 +26,7 @@
     "font-awesome": "^4.7.0",
     "ngx-bootstrap": "^3.1.4",
     "ngx-embed-video": "^1.0.4",
+    "ngx-pagination": "^3.2.1",
     "ngx-y2-player": "^2.1.1",
     "ngx-youtube-player": "^6.0.0",
     "rxjs": "~6.3.3",

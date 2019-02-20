@@ -1,3 +1,74 @@
-<p>
-  browse-movies works!
-</p>
+<div class="browseMovies" id="browseMovies">
+  <div class="search" id="search">
+    <div class="container">
+      <h4>Search Movies:</h4>
+      <div class="row">
+        <div class="col-md-8">
+          <form action="">
+            <div class="form-group">
+              <input type="text" class="form-control" name="searchName" [(ngModel)]="searchName"
+                placeholder="Search...">
+            </div>
+          </form>
+        </div>
+        <div class="col-md-4">
+          <button type="button" class="btn btn-lg" (click)="searchMovies(searchName,$event)">Search</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="searchResult" id="searchResult" *ngIf="results">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3" *ngFor="let movie of movies | paginate: { itemsPerPage:20, currentPage:per, totalItems: searchPagesByInput.movie_count}">
+            <div class="imageSize">
+              <img src="{{movie.medium_cover_image}}" alt="">
+            </div>
+            <h5>{{movie.title}}</h5>
+            <div class="quality" *ngFor="let mov of movie.torrents">
+               <a href="{{mov.url}}" class="btn">{{mov.quality}}</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="pagination1" *ngIf="myPages">
+          <pagination-controls class="myPip" (pageChange)="searchMovies(searchName,$event)" maxSize="11"></pagination-controls>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+<br>
+
+
+<div class="homeData" id="homeData" *ngIf="pages">
+  <div class="pagination1">
+    <pagination-controls class="myPip"  (pageChange)="getHomePage($event)" maxSize="11"></pagination-controls>
+  </div>
+  <br>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col"
+        *ngFor="let movie of homePage | paginate: { itemsPerPage:20, currentPage:p, totalItems: searchPage.movie_count}">
+        <a routerLink="/moviedetails/{{movie.id}}"><img src="{{movie.medium_cover_image}}" alt="">
+        </a>
+        <div class="title">
+          <h5>{{movie.title}}</h5>
+          <p>{{movie.year}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <div class="pagination1">
+    <pagination-controls class="myPip" (pageChange)="getHomePage($event)" maxSize="11"></pagination-controls>
+  </div>
+  <br>
+
+</div>

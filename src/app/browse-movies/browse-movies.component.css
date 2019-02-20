@@ -1,0 +1,121 @@
+.browseMovies {
+    padding: 100px 0 50px 60px;
+    background-color: #1d2329;
+}
+.browseMovies .btn{
+    background-color: black;
+    color: white;
+    width: 110px;
+    height: 40px;
+    font-size: 16px;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: -2px;
+
+
+}
+.browseMovies input{
+    margin-left: 170px;
+    padding-left: 5px;
+    width: 600px;
+    padding-left: 10px;
+    margin-bottom: 55px;
+
+}
+.browseMovies h4{
+    color: rgb(201, 196, 196);
+    margin: 5px 0 10px 185px;
+}
+
+/* HomePagination */
+
+.homeData img{
+    height: 260px;
+    width: 180px;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 5px solid #cccccc;
+}
+.homeData img:hover{
+    border: 5px solid green;
+}
+.homeData h5{
+    color: white;
+    width: 170px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 15px;
+    margin-left: 8px;
+}
+.homeData p {
+    color: white;
+    font-size: 13px;
+    margin-left: 10px;
+}
+.pagination1 {
+    margin-top: 15px;
+    margin-left: 260px;
+    margin-bottom: 35px;
+}
+.myPip /deep/ .ngx-pagination .current {
+    background: green;
+    color: white;
+    font-weight: 700;
+}
+.myPip /deep/ .ngx-pagination a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    border: 0.5px solid #cccccc;
+    margin-left: 3px;
+
+}
+.myPip /deep/ .ngx-pagination a:hover {
+    background-color: white;
+    color: black;
+}
+/*Search Movies*/
+.browseMovies .searchResult img{
+        width: 180px;
+        height: 260px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border: 5px solid #cccccc;
+
+
+
+}
+.browseMovies .searchResult img:hover {
+    border: 5px solid green;
+}
+.searchResult h5{
+    width: 170px;
+    color: white;
+    font-size: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.browseMovies .searchResult .quality{
+    width: 170px;
+}
+.browseMovies .searchResult .quality .btn{
+    float: left;
+    width: 70px;
+    height: 40px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-size: 15px;
+    margin-left: -5px;
+    
+    
+}
+.browseMovies .searchResult .imageSize{
+    width: 180px;
+    height: 260px;
+}
