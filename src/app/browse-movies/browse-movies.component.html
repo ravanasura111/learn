@@ -49,7 +49,7 @@
           <div class="col-md-3">
               <div class="qualitySS">
                 <h5>OrderBy:</h5>
-                <select [(ngModel)]="OrderBySelected" class="form-control">
+                <select class="form-control">
                   <option value="">All</option>
                   <option *ngFor="let or of orderBy" [value]="or.name">{{or.name}}</option>
                 </select>
