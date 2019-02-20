@@ -12,22 +12,60 @@
           </form>
         </div>
         <div class="col-md-4">
-          <button type="button" class="btn btn-lg" (click)="searchMovies(searchName,$event)">Search</button>
+          <button type="button" class="btn btn-lg" (click)="searchMovies(searchName,$event,qualitySelected,genresSelected,ratingSelected)">Search</button>
         </div>
       </div>
     </div>
   </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+        <div class="qualitySS">
+          <h5>Quality:</h5>
+          <select [(ngModel)]="qualitySelected" class="form-control">
+            <option value="">All</option>
+            <option *ngFor="let qual of quality" [value]="qual.name">{{qual.name}}</option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-3">
+          <div class="qualitySS">
+            <h5>Genres:</h5>
+            <select [(ngModel)]="genresSelected" class="form-control">
+              <option value="">All</option>
+              <option *ngFor="let gen of genres" [value]="gen.name">{{gen.name}}</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-3">
+            <div class="qualitySS">
+              <h5>Rating:</h5>
+              <select [(ngModel)]="ratingSelected" class="form-control">
+                <option value="">All</option>
+                <option *ngFor="let rat of ratings" [value]="rat.id">{{rat.name}}</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-3">
+              <div class="qualitySS">
+                <h5>OrderBy:</h5>
+                <select [(ngModel)]="OrderBySelected" class="form-control">
+                  <option value="">All</option>
+                  <option *ngFor="let or of orderBy" [value]="or.name">{{or.name}}</option>
+                </select>
+              </div>
+            </div>
+    </div>
+  </div>
+  <br>
   <div class="searchResult" id="searchResult" *ngIf="results">
       <div class="container">
         <div class="row">
           <div class="col-md-3" *ngFor="let movie of movies | paginate: { itemsPerPage:20, currentPage:per, totalItems: searchPagesByInput.movie_count}">
             <div class="imageSize">
-              <img src="{{movie.medium_cover_image}}" alt="">
+              <a routerLink="/moviedetails/{{movie.id}}"><img src="{{movie.medium_cover_image}}" alt=""></a>
             </div>
             <h5>{{movie.title}}</h5>
-            <div class="quality" *ngFor="let mov of movie.torrents">
-               <a href="{{mov.url}}" class="btn">{{mov.quality}}</a>
-            </div>
           </div>
         </div>
       </div>

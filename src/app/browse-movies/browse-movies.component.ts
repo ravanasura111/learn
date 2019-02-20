@@ -28,6 +28,13 @@ export class BrowseMoviesComponent implements OnInit {
   public pages: boolean;
   public myPages: boolean;
   public searchPagesByInput:any = []; 
+  public quality:any [];
+  public qualitySelected: string;
+  public genres:any [];
+  public genresSelected: string;
+  public ratings:any [];
+  public ratingSelected: number;
+  public orderBy: any[];
   handdleSuccessMovies(res) {
     this.movies = res.data.movies;
   }
@@ -47,6 +54,9 @@ export class BrowseMoviesComponent implements OnInit {
       this.results = true;
       this.pages = true;
       this.myPages = false;
+      this.qualitySelected = '';
+      this.searchName = '';
+      this.genresSelected = '';
     }
 
   ngOnInit() {
@@ -58,8 +68,66 @@ export class BrowseMoviesComponent implements OnInit {
       behavior: 'smooth'
     })
   );
+        this.quality = [
+          {name: '720'},
+          {name: '1080'},
+          {name: '3D'}
+        ];
+        this.genres = [
+          { name: 'Action'},
+           { name: 'Adventure'},
+           { name: 'Animation'},
+           { name: 'Biography'},
+           { name: 'Comedy'},
+           { name: 'Crime'},
+           { name: 'Documentary'},
+           { name: 'Drama'},
+           { name: 'Family'},
+           { name: 'Fantasy'},
+           { name: 'Film-Noir'},
+           { name: 'Game-Show'},
+           { name: 'History'},
+           { name: 'Horror'},
+           { name: 'Music'},
+           { name: 'Musical'},
+           { name: 'Mystery'},
+           { name: 'News'},
+           { name: 'Reality-Tv'},
+           { name: 'Romance'},
+           { name: 'Sci-Fi'},
+           { name: 'Sport'},
+           { name: 'Talk-Show'},
+           { name: 'Thriller'},
+           { name: 'War'},
+           { name: 'Western'}
+        ];
+        this.ratings = [
+          {id: 9, name: '9+'},
+          {id: 8, name: '8+'},
+          {id: 7, name: '7+'},
+          {id: 6, name: '6+'},
+          {id: 5, name: '5+'},
+          {id: 4, name: '4+'},
+          {id: 3, name: '3+'},
+          {id: 2, name: '2+'},
+          {id: 1, name: '1+'},
+          {id: 0, name: 'All'}
+        ];
+        this.ratingSelected = 0;
+        this.orderBy = [
+          {name: 'Latest'},
+          {name: 'Oldest'},
+          {name: 'Seeds'},
+          {name: 'Peers'},
+          {name: 'Year'},
+          {name: 'Rating'},
+          {name: 'Likes'},
+          {name: 'Alphabets'},
+          {name: 'Download'},
+        ];
   }
-  searchMovies(searchName: string, paging: number) {
+  
+  searchMovies(searchName: string, paging: number, qualitySelected:string, genresSelected:string, ratingSelected:number) {
     if(this.results === true) {
       this.pages = false;
       this.myPages = true;
@@ -68,7 +136,7 @@ export class BrowseMoviesComponent implements OnInit {
       this.pages = true;
       this.myPages = false;
     }
-    this.buff.searchMovies(searchName, paging).subscribe(
+    this.buff.searchMovies(searchName, paging, qualitySelected, genresSelected, ratingSelected).subscribe(
       res => {
           this.handdleSuccessMovies(res);
           this.handdleSearchPagesByInput(res);

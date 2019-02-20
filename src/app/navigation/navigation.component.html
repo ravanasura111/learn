@@ -1,22 +1,53 @@
 <nav class="navbar navbar-expand-md navbar-dark">
- <a href="#" class="navbar-brand">Movie Buff</a>
- <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
-   <span class="navbar-toggler-icon"></span>
- </button>
- <div class="collapse navbar-collapse" id="collapsibleNavbar">
-   <ul class="navbar-nav">
-       <li class="nav-item">
-         <a href="#" class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
-        </li>
-       <li class="nav-item">
-         <a href="#" class="nav-link" routerLink="browse" routerLinkActive="active">Browse Movies</a>
-        </li>
-       <li class="nav-item">
-         <a href="#" class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a>
-        </li>
-       <li class="nav-item">
-         <a href="#" class="nav-link" routerLink="help" routerLinkActive="active">Help</a>
-        </li>
-   </ul>
- </div>
+  <a href="#" class="navbar-brand">Movie Buff</a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a href="#" class="nav-link" routerLink="/" routerLinkActive="active"
+          [routerLinkActiveOptions]="{exact: true}">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" routerLink="browse" routerLinkActive="active">Browse Movies</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link" routerLink="help" routerLinkActive="active">Help</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+
+      <form action="">
+        <div class="quick form-group">
+          <input type="text" class="form-control" placeholder="quick search..click Enter" name="quickSearch"
+            [(ngModel)]="quickSearch" (keyup.enter)="searchMovies(quickSearch)">
+        </div>
+      </form>
+      <li class="nav-item bor">
+        <a href="#" class="nav-link">Log In</a>
+      </li>
+      <li class="nav-item bor">
+        <a href="#" class="nav-link">Sign up</a>
+      </li>
+
+
+    </ul>
+  </div>
 </nav>
+<div class="quicksearching" id="quicksearching" *ngIf="quicksearching">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let movie of quickMovies">
+        <div class="col-md-12">
+         <a routerLink="/moviedetails/{{movie.id}}" (click)="reload()"> <h4>{{movie.title_long}}</h4></a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
