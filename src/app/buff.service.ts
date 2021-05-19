@@ -19,14 +19,14 @@ export class BuffService {
   private url11: string;
   private url12: string;
   constructor(private http: HttpClient) { 
-    this.url1 = 'https://yts.lt/api/v2/list_movies.json?sort=seeds&limit=10';
-    this.url2 = 'https://yts.lt/api/v2/list_movies.json?sort=seeds&limit=27';
-    this.url3 = 'https://yts.lt/api/v2/movie_details.json?movie_id=';
-    this.url4 = 'https://yts.lt/api/v2/list_movies.json?genre=sci-fi';
-    this.url5 = 'https://yts.lt/api/v2/movie_suggestions.json?movie_id=';
+    this.url1 = 'https://yts.mx/api/v2/list_movies.json?sort=seeds&limit=10';
+    this.url2 = 'https://yts.mx/api/v2/list_movies.json?sort=seeds&limit=27';
+    this.url3 = 'https://yts.mx/api/v2/movie_details.json?movie_id=';
+    this.url4 = 'https://yts.mx/api/v2/list_movies.json?genre=sci-fi';
+    this.url5 = 'https://yts.mx/api/v2/movie_suggestions.json?movie_id=';
     this.url6 = '&with_images=true&with_cast=true';
-    this.url7 = 'https://yts.lt/api/v2/list_movies.json/?query_term=';
-    this.url8 = 'https://yts.lt/api/v2/list_movies.json/?page=';
+    this.url7 = 'https://yts.mx/api/v2/list_movies.json/?query_term=';
+    this.url8 = 'https://yts.mx/api/v2/list_movies.json/?page=';
     this.url9 = '&page=';
     this.url10 = '&quality=';
     this.url11 = '&genre=';
